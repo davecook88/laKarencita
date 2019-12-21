@@ -1,0 +1,14 @@
+{
+  "name": "lakarencita",
+  "version": "1.0.0",
+  "description": "La Karencita website",
+  "main": "main.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "David Cook",
+  "license": "ISC",
+  "dependencies": {
+    "browser-refresh": "^1.7.3"
+  }
+}
