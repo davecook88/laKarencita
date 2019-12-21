@@ -4,11 +4,21 @@
   "description": "La Karencita website",
   "main": "main.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "npm run open",
+    "open": "concurrently \"http-server -a localhost -p 1234\" \"open http://localhost:1234/build\""
   },
   "author": "David Cook",
   "license": "ISC",
   "dependencies": {
     "browser-refresh": "^1.7.3"
+  },
+  "devDependencies": {
+    "concurrently": "^5.0.2",
+    "http-server": "^0.12.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dvc888/lakarencita.git"
   }
 }
