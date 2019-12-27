@@ -2,7 +2,7 @@ class VideoCarousel {
     constructor() {
         console.log('videoCarousel constructing');
         this.videos = [];
-        
+
     }
     addOnHover(){
         for(let i = 0; i < this.videos.length; i++){
@@ -12,9 +12,11 @@ class VideoCarousel {
             });
         }
     }
-    applyClasses(currentFrontElId){
+    applyClasses(id){
+        currentFrontElId = parseInt(id);
         let above;
         const front = this.videos[currentFrontElId];
+        const belowId = currentFrontElId + 1<
         const below = this.videos[currentFrontElId + 1];
         if (currentFrontElId > 1) {
             above = this.videos[currentFrontElId - 1];
