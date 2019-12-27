@@ -12,26 +12,33 @@ class ChannelInfo {
         const xhttp = new XMLHttpRequest();
 
         xhttp.onreadystatechange = (e) => {
-            try {
-                if (e.target.readyState == 4) {
-                // Typical action to be performed when the document is ready:
+            
+            if (e.target.status == 200 && e.target.readyState === 4) {
+                try {
+
                     this.json = JSON.parse(xhttp.responseText);
                     this.json.items.forEach(item => {
                         this.videoIds.push(item.id.videoId);
                     });
-
                     
-                }
-            } catch(err) {
-                console.log(err);
+                    for (let i = 0; i < 2; i++) {
+                        const id = this.videoIds[i];
+                        const video = new VideoPlayer(this.parentEl,id);
+                        video.addPlayer(i);
+                    }
+                } catch(err) {
+                    console.log(err);
+                }                
             }
+            
         };
         try {
             xhttp.open("GET", channelApiUrl, true);
+            xhttp.send();
         } catch(err) {
             console.log(err);
         }
-        xhttp.send();
+        
     }
 
     appendVideos(parentEl) {

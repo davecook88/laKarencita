@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="flipping.css">
+        <link rel="stylesheet" href="videoCarousel.css">
         <title>La Karencita</title>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Poiret+One&display=swap" rel="stylesheet">
         
@@ -19,7 +19,7 @@
 
             <ul class="nav">
                 <li class="navlink"><a href="#home">Home</a></li>
-                <li class="navlink"><a href="#videos">Videos</a></li>
+                <li class="navlink"><a href="#videos" id="videos-button">Videos</a></li>
                 <li class="navlink"><a href="#">Projects</a></li>
                 <li class="navlink"><a href="#">Contact</a></li>
             </ul>
@@ -45,8 +45,13 @@
             </section>
             <section id="videos">
                 <h1 class="main-title">Latest video</h1>
-                <iframe width="600" height="340" src="http://www.youtube.com/embed?max-results=1&controls=0&showinfo=0&rel=0&listType=user_uploads&list=UCJ9lYSdFSSr_d8wrb2neIHA" frameborder="0" allowfullscreen></iframe> 
-                <div class="body-text-box">
+                <!-- <div>
+                    <iframe 
+                    width="560" height="315" 
+                    src="https://www.youtube.com/embed/aeEkyyG3K_s" 
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                </div> -->
+                <!-- <div class="body-text-box">
                     <p class="body-text">Welcome to my website!</p>
                     <p class="body-text">If you've found this page, I'm guessing that you already know that I'm a Mexican woman, living in Vietnam with my British husband
                         and making videos about our experiences.
@@ -54,7 +59,7 @@
                     <p class="body-text">Read on to find out more about my videos and Spanish language teaching. Feel free to get in touch with 
                         me on social media using the links below!
                     </p>
-                </div>  
+                </div>   -->
             </section>
         </div>
     
@@ -67,6 +72,7 @@
                 <a href="https://www.facebook.com/lakarencita"><li class="footer-link facebook"><i class="fab fa-facebook"></i></li></a>
             </ul>
         </footer>
+        <script src="/Classes/VideoCarousel.js"></script>
         <script src="/Classes/VideoPlayer.js"></script>
         <script src="/Classes/ChannelInfo.js"></script>
         

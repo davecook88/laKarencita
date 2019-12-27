@@ -24,4 +24,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 // Populates the recent videos in videos section
-const channelInfo = new ChannelInfo();
+const channelInfo = new ChannelInfo(document.getElementById('videos'));
+let videoCarousel = new VideoCarousel();
+
+const videosButton = document.getElementById('videos-button');
+videosButton.addEventListener('click', function() {
+    videoCarousel.populateVideos();
+});

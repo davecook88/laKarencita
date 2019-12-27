@@ -1,0 +1,15 @@
+.front-video {
+    z-index: 2;
+    position: relative;
+}
+.hidden-video-above {
+    opacity: 0.5;
+    margin-top: -150em;
+    z-index: -2;
+}
+.hidden-video-below {
+    opacity: 0.5;
+    margin-top: -10em;
+    z-index: -1;
+    transform: scale(0.9);
+}
