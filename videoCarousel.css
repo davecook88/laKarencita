@@ -1,15 +1,42 @@
 .front-video {
     z-index: 2;
-    position: relative;
+    top:0%;
 }
 .hidden-video-above {
     opacity: 0.5;
-    margin-top: -150em;
-    z-index: -2;
+    top: -25%;
+    /* z-index: -2; */
+    transform: scale(0.9);
+}
+.hide {
+  display: none;
 }
 .hidden-video-below {
     opacity: 0.5;
-    margin-top: -10em;
-    z-index: -1;
+    top: 25%;
+    /* z-index: -1; */
     transform: scale(0.9);
+}
+.up-down-buttons{
+  position: absolute;
+  left:0;
+}
+.up-down-buttons i{
+    font-weight: 900;
+    display: block;
+    font-size: 3em;
+    padding: 1em;
+}
+.video-container {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    text-align: center;
+    margin: auto;
+    /* overflow: hidden; */
+}
+
+.youtube-video{
+  position: absolute;
+  transition: top 1s;
 }

@@ -24,10 +24,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 // Populates the recent videos in videos section
-const channelInfo = new ChannelInfo(document.getElementById('videos'));
+const channelInfo = new ChannelInfo(document.getElementById('video-box'));
 let videoCarousel = new VideoCarousel();
 
 const videosButton = document.getElementById('videos-button');
 videosButton.addEventListener('click', function() {
-    videoCarousel.populateVideos();
+    if (!channelInfo.json) {
+      console.log("no response from YouTube");
+    } else {
+      videoCarousel.populateVideos();
+    }
+
 });
