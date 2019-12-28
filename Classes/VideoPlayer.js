@@ -5,15 +5,15 @@ class VideoPlayer{
     }
 
     createHtml() {
-        return (`<iframe width="560" height="315" src="https://www.youtube.com/embed/${this.id}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`);
+        return (`<iframe class="youtube-iframe" src="https://www.youtube.com/embed/${this.id}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`);
     }
 
-    addPlayer(id) { 
+    addPlayer(id) {
         const el = document.createElement("div");
         el.id = id;
         el.classList.add('youtube-video');
         el.innerHTML = this.createHtml();
         this.parent.appendChild(el);
     }
-    
+
 }

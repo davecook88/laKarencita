@@ -1,3 +1,8 @@
+
+const IS_MOBILE = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+const CHANNEL_ID = 'UCJ9lYSdFSSr_d8wrb2neIHA';
+const NUMBER_OF_RESULTS = IS_MOBILE ? 3 : 10;
+
 class ChannelInfo {
     constructor(parentEl){
         this.json = undefined;
@@ -7,7 +12,7 @@ class ChannelInfo {
     }
 
     getChannelData(channelInfo) {
-        const channelApiUrl = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyDcVNpPLoAtuhJDuqHZdODcz3Nuo3mE1g0&channelId=UCJ9lYSdFSSr_d8wrb2neIHA&part=snippet,id&order=date&maxResults=10";
+        const channelApiUrl = `https://www.googleapis.com/youtube/v3/search?key=AIzaSyDcVNpPLoAtuhJDuqHZdODcz3Nuo3mE1g0&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=${NUMBER_OF_RESULTS}`;
 
         const xhttp = new XMLHttpRequest();
 
@@ -21,7 +26,7 @@ class ChannelInfo {
                         this.videoIds.push(item.id.videoId);
                     });
 
-                    for (let i = 0; i < 10; i++) {
+                    for (let i = 0; i < NUMBER_OF_RESULTS; i++) {
                         const id = this.videoIds[i];
                         const video = new VideoPlayer(this.parentEl,id);
                         video.addPlayer(i);

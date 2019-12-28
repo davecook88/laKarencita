@@ -1,3 +1,7 @@
+//check if this is being shown on mobile
+let isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+
 // Selection of HTML objects
 const burger = document.querySelector('.burger i');
 const nav = document.querySelector('.nav');
@@ -34,5 +38,12 @@ videosButton.addEventListener('click', function() {
     } else {
       videoCarousel.populateVideos();
     }
-
 });
+// let hasPopulated = false;
+// if (isMobile) {
+//   document.addEventListener('scroll',() =>{
+//     if (window.scrollY > document.getElementById('videos').scrollHeight && !videoCarousel.alreadyPopulated) {
+//       videoCarousel.populateVideos();
+//     }
+//   });
+// }

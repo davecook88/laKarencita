@@ -40,3 +40,23 @@
   position: absolute;
   transition: top 1s;
 }
+
+@media screen and (max-width: 678px) {
+  .up-down-buttons {
+    display: none;
+  }
+  .youtube-iframe {
+    width: 75vw;
+  }
+  .youtube-video{
+    position: relative;
+  }
+  .video-container {
+    width: auto;
+    height: auto;
+    position: relative;
+    /* text-align: center; */
+    /* margin: auto; */
+    /* overflow: hidden; */
+  }
+}

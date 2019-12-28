@@ -3,6 +3,7 @@ class VideoCarousel {
         console.log('videoCarousel constructing');
         this.videos = [];
         this.currentFrontId = 0;
+        this.alreadyPopulated = false;
 
     }
     addOnHover(){
@@ -38,7 +39,7 @@ class VideoCarousel {
         if (below) below.classList = ('youtube-video hidden-video-below');
         if (above) above.classList = ('youtube-video hidden-video-above');
         for (let i = 0; i < this.videos.length; i++) {
-          if (i > belowId || i < aboveId) {
+          if (i > belowId  || i < aboveId) {
             this.videos[i].classList = 'youtube-video hide';
           }
         }
@@ -57,8 +58,8 @@ class VideoCarousel {
         const upButton = document.getElementById('up-button');
         const downButton = document.getElementById('down-button');
         upButton.addEventListener('click', () => this.addOneToCurrentFrontId());
-        downButton.addEventListener('click', () => this.minusOneFromCurrentFrontId());
-        if (!bool) this.applyClasses(0);
+        this.applyClasses(0);
+        this.alreadyPopulated = true;
     }
     addOneToCurrentFrontId(){
       if (this.currentFrontId > this.videos.length - 1) {
