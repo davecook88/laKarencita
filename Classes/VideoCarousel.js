@@ -1,26 +1,17 @@
+const PARENT_EL_ID = 'videos';
+
 class VideoCarousel {
     constructor() {
+        this.videoBox = this.createVideoBox();
+        this.channelInfo = new ChannelInfo(this.videoBox)//(document.getElementById('video-box'));
         console.log('videoCarousel constructing');
+        this.containerDiv = document.getElementById('videos');
         this.videos = [];
         this.currentFrontId = 0;
         this.alreadyPopulated = false;
-
-    }
-    addOnHover(){
-        for(let i = 0; i < this.videos.length; i++){
-            const v = this.videos[i];
-            v.addEventListener('mouseover', (e) => {
-                this.onHover(e.target.id);
-            });
-        }
-    }
-    addKeyPress(){
-      for(let i = 0; i < this.videos.length; i++){
-          const v = this.videos[i];
-          v.addEventListener('keypress', (e) => {
-              console.log(e);
-          });
-      }
+        this.buttonHolder = this.createButtonHolder();
+        this.upButton = this.createButton('up');
+        this.downButton = this.createButton('down');
     }
     applyClasses(){
         const currentFrontElId = this.currentFrontId;// parseInt(id);
@@ -44,20 +35,35 @@ class VideoCarousel {
           }
         }
     }
-    onHover(id) {
-        if (!id) return;
-        console.log(id);
-        this.applyClasses(id);
+    createButtonHolder() {
+      const holderDiv = document.createElement('div');
+      holderDiv.classList = "up-down-buttons";
+      this.containerDiv.insertBefore(holderDiv, this.containerDiv.children[1]);
+      return holderDiv;
+    }
+    createButton(upOrDown) {
+      const innerHTML = `<i class="fas fa-arrow-${upOrDown}" id="${upOrDown}-button"></i>`
+      const button = document.createElement('div');
+      if (upOrDown == 'up') {
+        button.addEventListener('click',() => this.addOneToCurrentFrontId());
+      } else {
+        button.addEventListener('click',() => this.minusOneFromCurrentFrontId());
+      }
+      button.innerHTML = innerHTML;
+      this.buttonHolder.appendChild(button);
+      return button;
+    }
+    createVideoBox(){
+      const parentEl = document.getElementById(PARENT_EL_ID);
+      const el = document.createElement('div');
+      el.classList.add('video-container');
+      el.id = 'video-box';
+      parentEl.appendChild(el);
+      return el;
     }
     populateVideos(bool){
         console.log('populating');
         this.videos = document.getElementsByClassName('youtube-video');
-        // for (let i = 0; i < this.videos.length; i++) {
-        //     console.log(this.videos[i].classList);
-        // }
-        const upButton = document.getElementById('up-button');
-        const downButton = document.getElementById('down-button');
-        upButton.addEventListener('click', () => this.addOneToCurrentFrontId());
         this.applyClasses(0);
         this.alreadyPopulated = true;
     }
@@ -83,4 +89,6 @@ class VideoCarousel {
       console.log(this.currentFrontId);
       this.applyClasses();
     }
+
+
 }
