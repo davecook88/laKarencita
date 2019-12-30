@@ -22,9 +22,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
 
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
+        try {
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
+      } catch(e){
+        console.log(e);
+      }
     });
 });
 // Populates the recent videos in videos section

@@ -14,6 +14,7 @@
         justify-content: space-around;
         z-index: 1;
     }
+
     section{
         height:100%;
         margin: 15vw 0;
@@ -41,6 +42,16 @@
         position: relative;
         transform: rotate(270deg);
     }
+    .location-section {
+      display: inline-block;
+    }
+    .location-text{
+      max-width: fit-content;
+    }
+    .map-and-description{
+      vertical-align: top;
+    }
+
 
     .logo{
         display: none;

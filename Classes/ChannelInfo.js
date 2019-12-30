@@ -1,7 +1,7 @@
 
 const IS_MOBILE = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 const CHANNEL_ID = 'UCJ9lYSdFSSr_d8wrb2neIHA';
-const NUMBER_OF_RESULTS = IS_MOBILE ? 3 : 10;
+const NUMBER_OF_RESULTS = IS_MOBILE ? 3 : 5;
 
 class ChannelInfo {
     constructor(parentEl){

@@ -9,6 +9,9 @@ body {
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     text-align: center;
 }
+a{
+  text-decoration: none;
+}
 h1 {
     font-family: 'Poiret One', Arial, Helvetica, sans-serif;
 }
@@ -26,6 +29,24 @@ header {
     background: #1cd6b3;
     color: #000;
     position: fixed;
+}
+.button{
+  background-color: #1cd6b3;
+  color: white;
+  padding: 12px 20px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Poiret One', Arial, Helvetica, sans-serif;
+  font-size: 2em;
+  text-decoration:  none;
+  width: fit-content;
+  margin: auto;
+}
+.button:hover{
+  background-color: #fff;
+  color: #1cd6b3;
+  border: 1px solid #1cd6b3;
 }
 
 .footer-link{
