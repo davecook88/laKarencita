@@ -62,20 +62,17 @@ class VideoCarousel {
       return el;
     }
     populateVideos(bool){
-        console.log('populating');
         this.videos = document.getElementsByClassName('youtube-video');
         this.applyClasses(0);
         this.alreadyPopulated = true;
     }
     addOneToCurrentFrontId(){
       if (this.currentFrontId > this.videos.length - 1) {
-        console.log("too high");
         this.currentFrontId = this.videos.length - 1;
         return;
       }
       console.log('up');
       this.currentFrontId = this.currentFrontId + 1;
-      console.log(this.currentFrontId);
       this.applyClasses();
 
     }
@@ -84,9 +81,7 @@ class VideoCarousel {
         this.currentFrontId = 0;
         return;
       };
-      console.log('down');
       this.currentFrontId = this.currentFrontId - 1;
-      console.log(this.currentFrontId);
       this.applyClasses();
     }
 
