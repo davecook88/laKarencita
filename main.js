@@ -39,11 +39,4 @@ videosButton.addEventListener('click', function() {
       videoCarousel.populateVideos();
     }
 });
-// let hasPopulated = false;
-// if (isMobile) {
-//   document.addEventListener('scroll',() =>{
-//     if (window.scrollY > document.getElementById('videos').scrollHeight && !videoCarousel.alreadyPopulated) {
-//       videoCarousel.populateVideos();
-//     }
-//   });
-// }
+const contactForm = new ContactForm(document.getElementById('contact-form'));
