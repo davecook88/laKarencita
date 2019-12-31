@@ -19,7 +19,7 @@
 }
 .up-down-buttons{
   position: absolute;
-  left:0;
+  left:20vw;
 }
 .up-down-buttons i{
     font-weight: 900;

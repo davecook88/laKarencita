@@ -17,20 +17,46 @@ function toggleNav() {
 burger.addEventListener('click', function() {
     toggleNav();
 });
-// Making the transitions between sections slide
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+//Making the transitions between sections slide
+let testEl;
+document.querySelectorAll('.section-link').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-
+        const flexContainer = document.querySelector(".flex-container");
+        const originalXOffset = flexContainer.getBoundingClientRect().left;
         try {
           document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
+        // console.log(originalXOffset, flexContainer.getBoundingClientRect().left);
+        // if (originalXOffset > flexContainer.getBoundingClientRect().left  ) {
+        //   window.scrollBy({x:-100, behavior:"smooth"});
+        // }
+
       } catch(e){
         console.log(e);
       }
     });
 });
+// let testEvent;
+// let targetEl;
+// let xPos;
+// document.querySelectorAll('.section-link').forEach(anchor => {
+//     anchor.addEventListener('click', function (e) {
+//       e.preventDefault();
+//
+//       try {
+//         console.log(e);
+//         testEvent = e;
+//         targetEl = document.querySelector(e.target.hash);
+//         xPos = targetEl.offsetLeft;
+//
+//         window.scrollTo({right:xPos, behavior:"smooth"});
+//       } catch(e){
+//         console.log(e);
+//       }
+//     });
+// });
 // Populates the recent videos in videos section
 //const channelInfo = new ChannelInfo(document.getElementById('video-box'));
 let videoCarousel = new VideoCarousel();
@@ -40,7 +66,7 @@ videosButton.addEventListener('click', function() {
     if (!videoCarousel.channelInfo.json) {
       console.log("no response from YouTube");
     } else {
-      videoCarousel.populateVideos();
+      if (!isMobile) videoCarousel.populateVideos();
     }
 });
 const contactForm = new ContactForm(document.getElementById('contact-form'));
