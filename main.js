@@ -20,45 +20,25 @@ burger.addEventListener('click', function() {
 //Making the transitions between sections slide
 let testEl;
 document.querySelectorAll('.section-link').forEach(anchor => {
+    console.log(anchor);
+
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const flexContainer = document.querySelector(".flex-container");
-        const originalXOffset = flexContainer.getBoundingClientRect().left;
+        console.log(e);
+        console.log('clicked');
         try {
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
+          e.preventDefault();
+          const targetEl = document.querySelector(this.getAttribute('href'));
+          console.log(targetEl);
+          targetEl.scrollIntoView({
             behavior: 'smooth'
         });
-        // console.log(originalXOffset, flexContainer.getBoundingClientRect().left);
-        // if (originalXOffset > flexContainer.getBoundingClientRect().left  ) {
-        //   window.scrollBy({x:-100, behavior:"smooth"});
-        // }
-
       } catch(e){
         console.log(e);
+
       }
     });
 });
-// let testEvent;
-// let targetEl;
-// let xPos;
-// document.querySelectorAll('.section-link').forEach(anchor => {
-//     anchor.addEventListener('click', function (e) {
-//       e.preventDefault();
-//
-//       try {
-//         console.log(e);
-//         testEvent = e;
-//         targetEl = document.querySelector(e.target.hash);
-//         xPos = targetEl.offsetLeft;
-//
-//         window.scrollTo({right:xPos, behavior:"smooth"});
-//       } catch(e){
-//         console.log(e);
-//       }
-//     });
-// });
-// Populates the recent videos in videos section
-//const channelInfo = new ChannelInfo(document.getElementById('video-box'));
+
 let videoCarousel = new VideoCarousel();
 
 const videosButton = document.getElementById('videos-button');
