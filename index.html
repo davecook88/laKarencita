@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="small-style.css">
         <link rel="stylesheet" href="videoCarousel.css">
         <link rel="stylesheet" href="form.css">
+        <link rel="stylesheet" href="italki.css">
         <link rel="shortcut icon" type="image/png" href="./static/favicon-32.png"/>
         <title>La Karencita</title>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Poiret+One&display=swap" rel="stylesheet">
@@ -34,7 +35,7 @@
         </header>
 
         <div class="flex-container">
-            <section id="home">
+            <section class="page-section" id="home">
               <div class="home-body">
                 <h1 class="main-title">La Karencita</h1>
                 <img class="picture" src="static/karenanddave1.jpg" alt="" >
@@ -52,12 +53,12 @@
             </section>
             <div class="buffer">
             </div>
-            <section id="videos">
+            <section class="page-section" id="videos">
                 <h1 class="main-title">Latest video</h1>
             </section>
             <div class="buffer">
             </div>
-            <section id="location">
+            <section class="page-section" id="location">
               <h1 class="main-title">19-12-30: Hoi An</h1>
               <div class="map-and-description location-section">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d122778.3728926151!2d108.3470323996176!3d15.918280808833853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31420dd4e1353a7b%3A0xae336435edfcca3!2zSOG7mWkgQW4sIFF14bqjbmcgTmFtLCBWaWV0bmFt!5e0!3m2!1ses-419!2s!4v1577710348005!5m2!1ses-419!2s"
@@ -75,17 +76,25 @@
             </section>
             <div class="buffer">
             </div>
-            <section id="italki">
-              <h1 class="main-title">Learn Spanish with me!</h1>
-              <iframe src="https://www.youtube.com/embed/6hjCOVRLN7s"
-               frameborder="0" width="50%" height="25%" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-               <p>I've been helping students from all over the world improve their level of Spanish with me on italki.</p>
-               <p>If you are learning Spanish and you'd like to practice with me, I'd love to help you. Click below to see my italki profile.</p>
-               <a href="https://www.italki.com/lakarencita"><div class="button">my profile</div></a>
+            <section class="page-section" id="italki">
+              <div class="home-body">
+                <h1 class="main-title">Learn Spanish with me!</h1>
+                <iframe src="https://www.youtube.com/embed/6hjCOVRLN7s"
+                 frameborder="0" width="50%" height="25%" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                 <div class="italki-container">
+                   <div class="italki-text">
+                     <p>I've been helping students from all over the world improve their level of Spanish with me on italki.</p>
+                     <p>If you are learning Spanish and you'd like to practice with me, I'd love to help you. Click below to see my italki profile.</p>
+                   </div>
+                   <a href="https://www.italki.com/lakarencita" target="_blank"><div id="italki-reviews"></div></a>
+                 </div>
+
+                 <a href="https://www.italki.com/lakarencita"><div class="button">my profile</div></a>
+             </div>
             </section>
             <div class="buffer">
             </div>
-            <section id="contact">
+            <section class="page-section" id="contact">
               <h1 class="main-title">Get in touch</h1>
               <div class="form-holder">
                 <form id="contact-form">
@@ -120,6 +129,7 @@
         <script src="class-VideoPlayer.js"></script>
         <script src="class-ChannelInfo.js"></script>
         <script src="class-ContactForm.js"></script>
+        <script src="class-CommentsBox.js"></script>
 
         <script src="main.js"></script>
         <!-- Global site tag (gtag.js) - Google Analytics -->

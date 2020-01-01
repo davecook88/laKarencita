@@ -19,7 +19,7 @@
 }
 .up-down-buttons{
   position: absolute;
-  left:10vw;
+  left:15vw;
 }
 .up-down-buttons i{
     font-weight: 900;
@@ -30,9 +30,9 @@
 .video-container {
     width: 50%;
     height: 100%;
-    position: relative;
+    position: absolute;
     text-align: center;
-    margin: auto;
+    right: 15vw;
     /* overflow: hidden; */
 }
 

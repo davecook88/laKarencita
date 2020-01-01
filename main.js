@@ -20,15 +20,10 @@ burger.addEventListener('click', function() {
 //Making the transitions between sections slide
 let testEl;
 document.querySelectorAll('.section-link').forEach(anchor => {
-    console.log(anchor);
-
     anchor.addEventListener('click', function (e) {
-        console.log(e);
-        console.log('clicked');
         try {
           e.preventDefault();
           const targetEl = document.querySelector(this.getAttribute('href'));
-          console.log(targetEl);
           targetEl.scrollIntoView({
             behavior: 'smooth'
         });
@@ -50,3 +45,5 @@ videosButton.addEventListener('click', function() {
     }
 });
 const contactForm = new ContactForm(document.getElementById('contact-form'));
+const italkiReviews = new CommentsBox('italki-reviews');
+italkiReviews.start();

@@ -90,6 +90,10 @@ header {
     height: 12em;
     border:3px solid black;
 }
+#italki-reviews{
+  margin: auto;
+  width: fit-content;
+}
 .social-media-icons{
     display: flex;
     float: right;

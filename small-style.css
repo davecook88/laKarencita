@@ -60,5 +60,7 @@
     .social-media-icons{
       float: none;
     }
-
+    #italki-reviews{
+      height: 17em;
+    }
 }

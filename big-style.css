@@ -14,11 +14,10 @@
         justify-content: space-around;
         z-index: 1;
     }
-
-    section{
+    .page-section{
         height:100%;
         margin: 0 3em;
-        /* width:100vw; */
+        width:100vw;
         padding:2em;
         transform: rotate(90deg);
         z-index: -1;
@@ -30,7 +29,7 @@
     }
     .home-body {
       width:75vw;
-      margin: auto;
+      margin-left:15vw;
       overflow: hidden;
     }
 
@@ -42,6 +41,7 @@
         padding:0 4em;
         margin: auto;
     }
+
     .flex-container {
         text-align: center;
         height: 85vw;
@@ -50,6 +50,13 @@
     }
     .instagram-block{
       display: inline-block;
+    }
+    .italki-container{
+      display: flex;
+    }
+    .italki-text{
+      max-width: 50%;
+      padding: 1em;
     }
     .location-section {
       display: inline-block;
@@ -69,7 +76,6 @@
     .main-title {
         font-size: 3.5em;
         margin: auto;
-        width: 30vw;
     }
     .nav{
         padding: 0 1.3em;
