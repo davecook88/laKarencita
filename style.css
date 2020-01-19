@@ -117,6 +117,13 @@ header {
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
   border-radius: 20%;
 }
+.green-link{
+    color:#1cd6b3;
+    text-decoration: none;
+}
+.green-link:hover{
+    color:#d61c3e;
+}
 .text-left{
     text-align: left;
 }
