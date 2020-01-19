@@ -7,40 +7,45 @@ class ContactForm {
     this.messageInput = el.elements.message;
     this.submitButton = el.elements.submitbutton;
     this.setOnClick();
-    this.setUpXmlHttpRequest();
   }
   setOnClick() {
     this.submitButton.addEventListener('click',(e) => this.submitFormData(e));
   }
-  setUpXmlHttpRequest() {
+  setUpXmlHttpRequest = (params) => {
     let xhr = new XMLHttpRequest();
-    xhr.open('post', GET_URL);
-    xhr.onload = function() {
+    xhr.open('GET', `${GET_URL}?${params}`);
+    xhr.onload = () => {
         if(xhr.status !== 200)
         {
             return alert("Unexpected response");
         }
-
+        this.showMessage('Thank you for your message!',this.form);
         const response = JSON.parse(xhr.responseText);
 
         if(response.message === 0)
         {
-            return console.log(response.error);
+          this.showMessage('Sorry, there was a problem sending your message.', this.form);
+          return console.log(response.error);
         }
 
         return console.log(response);
     };
-    this.xhr = xhr;
+    xhr.send();
   }
   submitFormData(e){
     e.preventDefault();
-    const data = new FormData();
-    data.append('timestamp',this.nameInput.value);
-    data.append('name',this.nameInput.value);
-    data.append('email',this.emailInput.value);
-    data.append('message',this.messageInput.value);
-    console.log(data);
-    this.xhr.send(data);
-    this.setUpXmlHttpRequest();
+    let params = '';
+    params += `timestamp=${this.nameInput.value}&`;
+    params += `name=${this.nameInput.value}&`;
+    params += `email=${this.emailInput.value}&`;
+    params += `message=${this.messageInput.value}`;
+    console.log(params);
+    this.setUpXmlHttpRequest(params);
+    
+  }
+
+  showMessage(message,el){
+    const html = `<h1>${message}</h1>`;
+    el.innerHTML = html;
   }
 }
