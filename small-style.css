@@ -5,6 +5,7 @@
     footer{
         position: fixed;
         height: auto;
+        z-index: 999;
     }
 
     header {
@@ -14,8 +15,11 @@
         top: 0;
         z-index: 10;
         height: 2em;
+        z-index: 999;
     }
-
+    .instagram-media-rendered {
+      display: initial;
+    }
     .burger {
         display: inline;
         position: absolute;
